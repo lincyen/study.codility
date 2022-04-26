@@ -4,6 +4,8 @@
 ### Eclipse ###
 .metadata
 bin/
+test-classes/
+target/
 tmp/
 *.tmp
 *.bak
