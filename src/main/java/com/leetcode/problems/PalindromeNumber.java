@@ -25,7 +25,7 @@ public class PalindromeNumber {
                 reverse = reverse * 10 + x % 10;
                 x /= 10;
             }
-         //   System.out.println(reverse);
+            System.out.println(reverse);
 
             if (reverse == original) {
                 flag = true;
