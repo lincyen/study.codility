@@ -5,7 +5,7 @@ public class LongestCommonPrefix {
     /**
      * Arrays 안의 문자열 중 가장 긴 문자열 찾기
      *
-     * 배열의 첫번째 요소와 다른 요소간에 indexof 연산을 반복해 가장 큰 값을 찾은 후, 그중 가장 작은 수만큼 리턴
+     * 배열의 첫번째 요소와 다른 요소간에 substring 연산을 반복해 가장 큰 값을 찾은 후, 그중 가장 작은 수만큼 리턴
      *
      * String 의 길이는 무조건 1개 이상, length 는 0 부터 시작
      * 1 <= strs.length <= 200
