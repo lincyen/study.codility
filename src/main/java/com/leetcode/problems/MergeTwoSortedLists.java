@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class MergeTwoSortedLists {
 
+    /**
+     * 얕은 복사를 이용한 값 변경으로 풀기
+     * @param list1 {@link ListNode 노드1}
+     * @param list2 {@link ListNode 노드2}
+     * @return 노드 1과 노드 2를 정렬한 새로운 {@link ListNode}
+     */
     public ListNode mergeTwoLists_good(ListNode list1, ListNode list2) {
         if (list1 == null) return list2;
         if (list2 == null) return list2;
@@ -87,69 +93,7 @@ public class MergeTwoSortedLists {
 
             pointer--;
         }
-//        System.out.println(list1.val);
-//        System.out.println(list2.val);
-//        System.out.println(Arrays.toString(nodeValues));
         System.out.println("result :" + result);
-        return result;
-    }
-
-    public ListNode mergeTwoLists_old(ListNode list1, ListNode list2) {
-
-        ListNode result = new ListNode();
-        int pointer = 1;
-        int[] nodeValues = new int[50];
-
-        while (true) {
-            if (list1.next != null || list2.next != null) {
-                if (list1.val >= list2.val) {
-                    nodeValues[pointer] = list2.val;
-                    list2 = list2.next;
-                } else {
-                    nodeValues[pointer] = list1.val;
-                    list1 = list1.next;
-                }
-                pointer++;
-            } else {
-                break;
-            }
-        }
-
-        //lastNode
-        if (list1.val >= list2.val) {
-            nodeValues[pointer] = list2.val;
-            pointer++;
-            nodeValues[pointer] = list1.val;
-        } else {
-            nodeValues[pointer] = list1.val;
-            pointer++;
-            nodeValues[pointer] = list2.val;
-        }
-
-        System.out.println(Arrays.toString(nodeValues));
-
-        ListNode temp = new ListNode();
-
-        while (pointer > 0) {
-
-            if (result.next == null) { //초기
-                result = new ListNode(nodeValues[pointer]);
-                pointer--;
-                ListNode node = new ListNode(nodeValues[pointer]); // result 생성(?)
-                result.next = node;
-                System.out.println("node value : " + result);
-            } else {
-                ListNode node = new ListNode(nodeValues[pointer]); // 가장 머리 값
-                node.next = result;
-                result = node;
-                System.out.println("node value : " + result);
-            }
-
-            pointer--;
-        }
-
-        System.out.println(result);
-
         return result;
     }
 
